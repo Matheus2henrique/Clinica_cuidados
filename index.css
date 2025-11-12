@@ -280,10 +280,23 @@ body {
 
 /* Header */
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 0 32px;
+  z-index: 9999;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
+
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.2); /* transparente */
+  box-shadow: none; /* remove sombra se quiser um visual mais limpo */
+  backdrop-filter: blur(8px); /* opcional: cria um efeito de vidro */
+}
+
 .header-content {
   display: flex;
   align-items: center;
