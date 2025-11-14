@@ -933,28 +933,35 @@ nav a:hover {
   display: none;
 }
 
+#ul-pop-up{
+  list-style: none;
+  position: relative;
+  right: 15px;
+}
+
 /* =============== MENU MOBILE =============== */
 .menuMobile {
-  display: none;
-  width: 60%;
-  min-height: 140px;
-  /* padding: 20px; */
-  border-radius: 10px;
-  /* margin-top: 10px; */
-  background: linear-gradient(to bottom, #360101af, #9c02029a);
-  position: relative;
-  top: 140px;
-  right: 60px;
-  /* animação */
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: 0.3s ease;
+  text-align: center;
+    display: none;
+    position: fixed;
+    top: 95px;
+    right: 16%;
+    background-color: rgba(255, 255, 255, 0.488);
+    padding: 2px 10px ;
+    border-radius: 20px;
+    z-index: 999999; /* garante que fique acima de tudo */
+    width: 160px;
+    opacity: 0;
+  pointer-events: none;
+  transform: translateX(100%);
+  transition: 0.3s;
 }
 
 .menuMobile.abrir {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
+    display: block;
+    opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
 }
 
 /* ==================== */
@@ -1037,7 +1044,7 @@ nav a:hover {
     right: 110px;
     position: relative;
   }
-  header.scrolled ul li {
+  header.scrolled #ul-opcoes-header li {
     display: none;
   }
   header.scrolled .whats {
@@ -1079,7 +1086,7 @@ nav a:hover {
 
 @media(max-width: 427px ){
   nav ul  {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(2, 1fr);
     gap: 8px 4px; /* linha x coluna */
     margin-bottom: 12px; /* espaço entre menu e imagem */
@@ -1110,6 +1117,11 @@ nav a:hover {
     /* top: 150px; */
   }
 
+  .icon-menu.scrolled{
+    display: block;
+    width: 32px;
+    cursor: pointer;
+  }
 
 }
 
@@ -1176,7 +1188,7 @@ nav a:hover {
     right: 110px;
     position: relative;
   }
-  header.scrolled ul li {
+  header.scrolled #ul-opcoes-header li {
     display: none;
   }
   header.scrolled .whats {
@@ -1192,6 +1204,8 @@ nav a:hover {
     position: relative;
     left: 30px;
   }
+
+  
 }
 
 @media(min-width:428px) and (max-width:500px){
@@ -1463,6 +1477,10 @@ nav a:hover {
     width: 14%;
     bottom: 10px;
   }
+  .banner-text{
+    position: static;
+    text-align: center;
+  }
 
   
 }
@@ -1617,6 +1635,18 @@ nav a:hover {
   .next-btn{
     right:12px;
   }  
+  .banner-text{
+    position: absolute;
+    z-index: 1;
+    bottom: 10%;
+    left: 40%;
+    position: absolute;
+    padding: 40px 32px 32px 32px;
+    background: #fff;
+    border-radius: 10px;
+    opacity: 0.93;
+  }
+  
 }
 
 @media(min-width:10px){
