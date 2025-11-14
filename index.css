@@ -21,7 +21,7 @@
   font-weight: 400;
   letter-spacing: 1px;
 }
-.btn-whatsapp {
+.btn-whatsapp  {
   background: #a7dc58;
   color: #fff;
   padding: 18px 36px;
@@ -35,7 +35,7 @@
   border: none;
   transition: background 0.2s;
 }
-.btn-whatsapp img {
+.btn-whatsapp  img {
   width: 28px;
   height: 28px;
 }
@@ -261,6 +261,9 @@ body {
   border: none;
   transition: background 0.2s;
   margin-top: 20px;
+  /* right: 55px;
+  bottom: 6px;
+  position: relative; */
 }
 .btn-whatsapp img {
   width: 24px;
@@ -280,18 +283,20 @@ body {
 
 /* Header */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  /* width: 100%; */
+  /* position: fixed; */
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 0 32px;
   z-index: 9999;
-    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 header.scrolled {
+  position: fixed;
+  top: 0;
+  /* left: 1; */
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.2); /* transparente */
   box-shadow: none; /* remove sombra se quiser um visual mais limpo */
   backdrop-filter: blur(8px); /* opcional: cria um efeito de vidro */
@@ -472,6 +477,7 @@ nav a:hover {
   margin: 0 auto;
 }
 .sobre-texto {
+  margin: 10px;
   flex: 1 1 350px;
   display: flex;
   flex-direction: column;
@@ -522,6 +528,7 @@ nav a:hover {
   border-radius: 12px;
   z-index: 1;
 }
+
 
 /* Depoimentos */
 .depoimentos {
@@ -922,11 +929,50 @@ nav a:hover {
   transform: translateY(0);
 }
 
+.icon-menu{
+  display: none;
+}
+
+/* =============== MENU MOBILE =============== */
+.menuMobile {
+  display: none;
+  width: 60%;
+  min-height: 140px;
+  /* padding: 20px; */
+  border-radius: 10px;
+  /* margin-top: 10px; */
+  background: linear-gradient(to bottom, #360101af, #9c02029a);
+  position: relative;
+  top: 140px;
+  right: 60px;
+  /* animação */
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: 0.3s ease;
+}
+
+.menuMobile.abrir {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ==================== */
 /* 📱 RESPONSIVIDADE 🖥️ */
 /* ==================== */
 
 @media (max-width: 320px) {
+  
+  
+
+  nav ul {
+    display: none;
+  }
+
+  .icon-menu.scrolled {
+    display: block;
+    width: 30px;
+  }
 
   nav ul {
     display: grid;
@@ -944,7 +990,7 @@ nav a:hover {
   .sobre-container {
     height: 500px;
   }
-
+  
   .card {
     margin: 10px;  
   }
@@ -958,173 +1004,60 @@ nav a:hover {
   .rodape-container li {
       display: block;
   }
-}
-
-@media (max-width : 427px){
-  .banner{
-    overflow: visible;
-    margin-top: 0px;
-  }
-
-  .prev-btn,
-  .next-btn {
-    position: relative; 
-    /* top: 350px; */
-    transform: none;
-    width: 48px;
-    height: 48px;
-    font-size: 1.5rem;
-  }
-  .next-btn{
-    top: -532px;
-    left: 50px;
-  }
-  .prev-btn{
-    left: -40px;
-  }
-
-  .card-separado{
-    padding: 10px;
-  }
-}
-
-@media(min-width:428px) and (max-width:500px){
-  .banner{
-    overflow:visible;
-    margin-top:0px ;
-  }
-
-  .sobre-container{
-    height:550px;
-  }
-
-  .prev-btn,.next-btn{
-    top:130px;
-  }
-  .next-btn{
-    right:5px;
-  }
-  .prev-btn{
-    left:5px;
-  }
-}
-
-@media(min-width : 501px) and (max-width : 600px){
-
-  .banner{
-    overflow:visible;
-    margin-top:0px;
-  }
-
-  .sobre-container{
-    height:580px;
-  }
-
-  .prev-btn,.next-btn{
-    top: 130px;
-    width: 40px
-  }
-
-  .prev-btn{
-    left:34px;
-  }
-  .next-btn{
-    right:34px;
-  }
-  .rodape-container ul{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:6px 8px;
-  }
-  .rodape-container{
-    display:block;
+  
+  .header-content,
+  .sobre-container,
+  .rodape-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   
-}
-
-@media(min-width: 601px) and (max-width: 651px ){
-  .banner{
-    overflow:visible;
-    margin-top:0px;
+  #btn-whats-header , 
+  #btn-whats-section{
+    position: relative;
+    left: 0px;
+  }
+  #btn-whats-sobre_nos{
+    position: relative;
+    right: 100px;
+  }
+  #btn-whats-footer{
+    position: relative;
+    left: 5px;
   }
 
-  .sobre-container{
-    height:630px
+  header.scrolled {
+    top: 0;
+    width: 100%;
+    height: 14%;
+  }
+  header.scrolled .logo-img{
+    width: 80px;
+    right: 110px;
+    position: relative;
+  }
+  header.scrolled ul li {
+    display: none;
+  }
+  header.scrolled .whats {
+    display: none;
+  }
+  header.scrolled .btn-whatsapp{
+    display: none;
+  }
+  
+  header.scrolled .icon-menu{
+    display: block;
+    width: 30px;
+    position: relative;
+    left: 30px;
+  }
+  
+  .header-content{
+    margin-bottom: 120px;
   }
 
-  .servicos-cursos{
-    margin-top:40px;
-  }
-
-  .prev-btn,.next-btn{
-    top:160px;
-    width:40px;
-  }
-  .prev-btn{
-    left:60px;
-  }
-  .next-btn{
-    right:60px;
-  }
-}
-
-@media(min-width:651px) and (max-width: 701px){
-  .banner{
-    overflow:visible;
-    margin-top:0px;
-  }
-  .servicos-cursos{
-    margin-top:50px;
-  }
-  .sobre-container{
-    height:650px
-  }
-  .prev-btn,.next-btn{
-    width:40px;
-    top:160px;
-  }
-  .prev-btn{
-    left:80px;
-  }
-  .next-btn{
-    right:80px;
-  }
-}
-
-@media(min-width:701px) and (max-width:770px){
-  .banner{
-    overflow:visible;
-    margin-top:0px;
-  }
-  .sobre-container{
-    height: 660px;
-  }
-  .servicos-cursos{
-    margin-top:140px
-  }
-  .prev-btn,.next-btn{
-    font-size:1.2rem;
-    top:140px;
-  }
-  .prev-btn{
-    left:100px;
-  }
-  .next-btn{
-    right:100px;
-  }
-}
-
-@media(min-width: 770px) and (max-width:800px){
-  .card{
-    width:260px;
-    margin-left:20px;
-  }
-  .prev-btn{
-    left:15px;
-  }
-  .next-btn{
-    right:15px;
-  }
 }
 
 @media (max-width: 400px) {
@@ -1180,14 +1113,384 @@ nav a:hover {
 
 }
 
-@media (min-width: 770px){
-  nav ul {
-  list-style: none;
-  display: flex;
-  gap: 48px;
-  margin: 0;
-  padding: 0;
+@media (max-width : 427px){
+  .banner{
+    overflow: visible;
+    margin-top: 0px;
+  }
+
+  .header-content{
+    margin-bottom: 120px;
+  }
+
+  .prev-btn,
+  .next-btn {
+    position: relative; 
+    /* top: 350px; */
+    transform: none;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+  .next-btn{
+    top: -532px;
+    left: 50px;
+  }
+  .prev-btn{
+    left: -40px;
+  }
+
+  .card-separado{
+    padding: 10px;
+  }
+
+  .header-content,
+  .sobre-container,
+  .rodape-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  #btn-whats-header , 
+  #btn-whats-section{
+    position: relative;
+    left: 0px;
+  }
+  #btn-whats-sobre_nos{
+    position: relative;
+    left: 80px;
+  }
+  #btn-whats-footer{
+    position: relative;
+    left: 5px;
+  }
+
+  header.scrolled {
+    top: 0;
+    width: 100%;
+    height: 14%;
+  }
+  header.scrolled .logo-img{
+    width: 80px;
+    right: 110px;
+    position: relative;
+  }
+  header.scrolled ul li {
+    display: none;
+  }
+  header.scrolled .whats {
+    display: none;
+  }
+  header.scrolled .btn-whatsapp{
+    display: none;
+  }
+  
+  header.scrolled .icon-menu{
+    display: block;
+    width: 30px;
+    position: relative;
+    left: 30px;
+  }
 }
+
+@media(min-width:428px) and (max-width:500px){
+  .banner{
+    overflow:visible;
+    margin-top:0px ;
+  }
+
+  .sobre-container{
+    height:550px;
+  }
+
+  .prev-btn,.next-btn{
+    top:130px;
+  }
+  .next-btn{
+    right:5px;
+  }
+  .prev-btn{
+    left:5px;
+  }
+  header.scrolled {
+    top: 0;
+    width: 100%;
+    height: 14%;
+  }
+  header.scrolled .logo-img{
+    width: 80px;
+    right: 110px;
+    position: relative;
+  }
+  header.scrolled ul li {
+    display: none;
+  }
+  header.scrolled .whats {
+    display: none;
+  }
+  header.scrolled .btn-whatsapp{
+    display: none;
+  }
+  
+  header.scrolled .icon-menu{
+    display: block;
+    width: 30px;
+    position: relative;
+    left: 30px;
+  }
+}
+
+@media(min-width : 501px) and (max-width : 600px){
+
+  .banner{
+    overflow:visible;
+    margin-top:0px;
+  }
+
+  .sobre-container{
+    height:580px;
+  }
+
+  .prev-btn,.next-btn{
+    top: 130px;
+    width: 40px
+  }
+
+  .prev-btn{
+    left:34px;
+  }
+  .next-btn{
+    right:34px;
+  }
+  .rodape-container ul{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:6px 8px;
+  }
+  .rodape-container{
+    display:block;
+  }
+  header.scrolled {
+    top: 0;
+    width: 100%;
+    height: 14%;
+  }
+  header.scrolled .logo-img{
+    width: 80px;
+    right: 110px;
+    position: relative;
+  }
+  header.scrolled ul li {
+    display: none;
+  }
+  header.scrolled .whats {
+    display: none;
+  }
+  header.scrolled .btn-whatsapp{
+    display: none;
+  }
+  
+  header.scrolled .icon-menu{
+    display: block;
+    width: 30px;
+    position: relative;
+    left: 30px;
+  }
+  
+}
+
+@media(min-width: 601px) and (max-width: 651px ){
+  .banner{
+    overflow:visible;
+    margin-top:0px;
+  }
+
+  .sobre-container{
+    height:630px
+  }
+
+  .servicos-cursos{
+    margin-top:40px;
+  }
+
+  .prev-btn,.next-btn{
+    top:160px;
+    width:40px;
+  }
+  .prev-btn{
+    left:60px;
+  }
+  .next-btn{
+    right:60px;
+  }
+  header.scrolled {
+    top: 0;
+    width: 100%;
+    height: 14%;
+  }
+  header.scrolled .logo-img{
+    width: 80px;
+    right: 110px;
+    position: relative;
+  }
+  header.scrolled ul li {
+    display: none;
+  }
+  header.scrolled .whats {
+    display: none;
+  }
+  header.scrolled .btn-whatsapp{
+    display: none;
+  }
+  
+  header.scrolled .icon-menu{
+    display: block;
+    width: 30px;
+    position: relative;
+    left: 30px;
+  }
+}
+
+@media(min-width:651px) and (max-width: 701px){
+  .banner{
+    overflow:visible;
+    margin-top:0px;
+  }
+  .servicos-cursos{
+    margin-top:50px;
+  }
+  .sobre-container{
+    height:650px
+  }
+  .prev-btn,.next-btn{
+    width:40px;
+    top:160px;
+  }
+  .prev-btn{
+    left:80px;
+  }
+  .next-btn{
+    right:80px;
+  }
+
+}
+
+@media(min-width:701px) and (max-width:770px){
+  .banner{
+    overflow:visible;
+    margin-top:0px;
+  }
+  .sobre-container{
+    height: 660px;
+  }
+  .servicos-cursos{
+    margin-top:140px
+  }
+  .prev-btn,.next-btn{
+    font-size:1.2rem;
+    top:140px;
+  }
+  .prev-btn{
+    left:100px;
+  }
+  .next-btn{
+    right:100px;
+  }
+
+  #btn-whats-section{
+    position: relative;
+    right: 12px;
+  }
+  #btn-whats-sobre_nos{
+    position: relative;
+    left: 70px;
+  }
+
+  header.scrolled {
+    top: 0;
+    width: 100%;
+    height: 14%;
+  }
+  header.scrolled .logo-img{
+    width: 80px;
+    position: relative;
+  }
+ 
+  #btn-whats-header{
+    position: relative;
+    right: 15px;
+    bottom: 18px;
+  }
+  header.scrolled #btn-whats-header{
+    position: relative;
+    right: 50px;
+    bottom: 15px;
+  }
+
+}
+
+@media(min-width: 770px) and (max-width:800px){
+  .card{
+    width:260px;
+    margin-left:20px;
+  }
+  .prev-btn{
+    left:15px;
+  }
+  .next-btn{
+    right:15px;
+  }
+
+   header.scrolled {
+    top: 0;
+    width: 100%;
+    height: 14%;
+  }
+  header.scrolled .logo-img{
+    width: 80px;
+    position: relative;
+  }
+ 
+  #btn-whats-header{
+    position: relative;
+    left: 22px;
+    bottom: 18px;
+  }
+  header.scrolled #btn-whats-header{
+    position: relative;
+    left: -42px;
+    width: 14%;
+    bottom: 10px;
+  }
+
+  
+}
+
+@media (min-width: 770px){
+  header.scrolled {
+    top: 0;
+    width: 100%;
+    height: 14%;
+    gap: 35px;
+  }
+  header.scrolled .logo-img{
+    width: 80px;
+    position: relative;
+  }
+ 
+  #btn-whats-header{
+    position: relative;
+    left: 22px;
+    bottom: 18px;
+  }
+  header.scrolled #btn-whats-header{
+    position: relative;
+    left: -42px;
+    width: 14%;
+    bottom: 10px;
+  }
+
   
 }
 
@@ -1214,7 +1517,12 @@ nav a:hover {
     height: 460px;
   }
 
-  .header-content,
+  .btn-whatsapp{
+    position: relative;
+    right: 65px;
+  }
+
+  /* .header-content, */
   .sobre-container,
   .rodape-container {
     flex-direction: column;
@@ -1308,7 +1616,7 @@ nav a:hover {
   }
   .next-btn{
     right:12px;
-  }
+  }  
 }
 
 @media(min-width:10px){

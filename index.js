@@ -148,3 +148,8 @@
       header.classList.remove('scrolled');
     }
   });
+
+   document.getElementById("btnMenu").addEventListener("click", () => {
+            const popup = document.getElementById("menu-Mobile");
+            popup.classList.toggle("abrir");
+        });

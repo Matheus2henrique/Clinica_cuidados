@@ -280,23 +280,10 @@ body {
 
 /* Header */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 0 32px;
-  z-index: 9999;
-    transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
-
-header.scrolled {
-  background-color: rgba(255, 255, 255, 0.2); /* transparente */
-  box-shadow: none; /* remove sombra se quiser um visual mais limpo */
-  backdrop-filter: blur(8px); /* opcional: cria um efeito de vidro */
-}
-
 .header-content {
   display: flex;
   align-items: center;
@@ -344,21 +331,14 @@ nav a {
 nav a:hover {
   color: #a7dc58;
 }
-.whats{
-  background-color: #215c23;
-  padding-left: 4px;
-  padding-right: 3.5px;
-  padding-top: 3px;
-  /* padding-bottom: 1p; */
-  border-radius: 20px ;
-}
+
 
 /* Banner */
 .banner {
   background: #ffffff;
   position: relative;
-  /* width: 100%; */
-  /* max-width: 1200px; */
+  width: 100%;
+  max-width: 1200px;
   max-height: 1000px;
   margin:  0 auto 0 auto;
   border-radius: 12px;
@@ -370,19 +350,18 @@ nav a:hover {
 }
 .banner-img {
   width: 100%;
-  height: 800px;
+  height: 100%;
   object-fit: cover;
   display: flex;
 }
 .banner-text {
   position: absolute;
   z-index: 1;
-  bottom: 10%;
-  left: 50%;
+  bottom: 0%;
+  left: 30%;
   position: absolute; /* Permite que o texto se posicione livremente */
   padding: 40px 32px 32px 32px;
   background: #fff;
-  border-radius: 10px;
   opacity: 0.93;
 
 }
@@ -492,7 +471,7 @@ nav a:hover {
   font-size: 0.98rem;
   margin-bottom: 24px;
   line-height: 1.5;
-  /* text-decoration: underline; */
+  text-decoration: underline;
 }
 .sobre-img-area {
   position: relative;
@@ -693,7 +672,6 @@ nav a:hover {
 .rodape-menu li a:hover {
   color: #a7dc58;
 }
-
 .form-email {
   display: flex;
   border: 2px solid #a7dc58;
@@ -738,8 +716,8 @@ nav a:hover {
   font-size: 0.98rem;
 }
 .rodape-info img {
-  width: 38px;
-  height: 38px;
+  width: 22px;
+  height: 22px;
 }
 .social {
   margin-top: 0.8rem;
@@ -1230,30 +1208,29 @@ nav a:hover {
     position: static;
     background: rgba(255,255,255,0.95);
     text-align: center;
-    
   }
 
   .banner-text h1 {
     font-size: 1.8rem;
   }
-  
+
   .banner-text p {
     font-size: 1rem;
   }
-  
+
   .sobre-img {
     width: 90%;
     height: auto;
   }
-  
+
   .sobre-img-bg {
     display: none;
   }
-  
+
   .card-servico {
     width: 90%;
   }
-  
+
   .depoimento-card {
     width: 90%;
   }
