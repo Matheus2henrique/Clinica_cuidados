@@ -211,7 +211,7 @@
 }
 
 .estrelas {
-  color: #4CAF50;
+    color: #dfff0d;
   font-size: 1.2rem;
   margin-top: 0.2rem;
 }
@@ -530,6 +530,116 @@ nav a:hover {
 }
 
 
+
+.top-descricao {
+  /* display: grid; */
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.card-geral{
+  width: 80%;
+  display: flex;
+  gap: 40px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+.top-descricao .card-top {
+  flex: 1;
+  text-align: center;
+  padding: 25px;
+}
+.top-descricao h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #7bcf36;
+  margin-bottom: 10px;
+}
+.top-descricao p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #6d6d6d;
+  line-height: 24px;
+  font-weight: 400;
+}
+.card-top{
+  background-color: #f4f2f2;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.icon-mais{
+  width: 130px;
+}
+.coracao-vital{
+  width: 85px;
+}
+
+.servico{
+  text-align: center;
+  padding-top: 40px;
+}
+
+.servico-descricao {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px 40px;
+  margin: 0 auto;
+  width: 80%;
+  padding-top: 40px;
+}
+.servico-descricao .card2 {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f2f2;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.servico-descricao .icon2 img {
+  width: 70px;
+  height: auto;
+  margin-bottom: 15px;
+}
+.servico-descricao h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  /* font-weight: 600; */
+  color: #7bcf36;
+  margin-bottom: 10px;
+}
+.servico-descricao p {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  color: #5e5e5e;
+  line-height: 24px;
+}
+
+@media(max-width:767px){
+  
+  .card-geral{
+    flex-direction: column;
+    align-items: center;
+    grid-template-columns: 1fr;
+    width: 75%;
+  }
+  .card-top{
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .servico-descricao {
+    grid-template-columns: 1fr; /* agora 1 por linha */
+    width: 90%; /* opcional: deixa mais largo no mobile */
+  }
+
+  .card2 {
+    max-width: 500px;   /* evita ficar muito esticado em telas pequenas */
+    margin: 0 auto;     /* centraliza cada card */
+  }
+}
+
+
 /* Depoimentos */
 .depoimentos {
   background: #a7dc58;
@@ -538,12 +648,6 @@ nav a:hover {
 }
 .depoimentos h1 {
   color: #fff;
-  /* font-size: 1.4rem;
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 400;
-  margin-bottom: 36px;
-  letter-spacing: 1px; */
-
   text-align: center;
   margin-bottom: 2rem;
   /* color: #000000; */
@@ -622,7 +726,7 @@ nav a:hover {
   text-align: left;
 }
 .estrelas {
-  color: #388e3c;
+    color: #dfff0d;
   font-size: 1.05rem;
   margin-top: 0.2rem;
   text-align: left;
@@ -963,6 +1067,16 @@ nav a:hover {
   pointer-events: auto;
   transform: translateX(0);
 }
+
+.icon-flutuante {
+  position: fixed;       /* fica sempre fixo na tela */
+  bottom: 20px;          /* distância do fundo */
+  right: 20px;           /* distância da direita */
+  width: 70px;           /* tamanho do ícone */
+  z-index: 9999;         /* fica na frente de tudo */
+  cursor: pointer;       /* vira mãozinha quando passar o mouse */
+}
+
 
 /* ==================== */
 /* 📱 RESPONSIVIDADE 🖥️ */
@@ -1570,6 +1684,10 @@ nav a:hover {
   .sobre-img {
     width: 90%;
     height: auto;
+    grid-template-columns : 1fr;
+    padding-right:10px;
+    position:relative;
+    bottom:20px;
   }
   
   .sobre-img-bg {
@@ -1654,5 +1772,19 @@ nav a:hover {
     overflow-x:hidden;
     margin:0;
     padding:0;
+  }
+}
+
+@media(max-width:770px){
+  .card-servico{
+        grid-template-columns : 1fr;
+      width: 80%;
+  }
+}
+
+@media(max-width:400px){
+  .card-servico{
+        grid-template-columns : 1fr;
+      width: 70%;
   }
 }
