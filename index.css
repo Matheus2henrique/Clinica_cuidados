@@ -1198,7 +1198,7 @@ nav a:hover {
   }
 }
 
-@media(max-width: 427px ){
+@media(max-width: 434px ){
   nav ul  {
     display: none;
     grid-template-columns: repeat(2, 1fr);
@@ -1239,7 +1239,7 @@ nav a:hover {
 
 }
 
-@media (max-width : 427px){
+@media (max-width : 434px){
   .banner{
     overflow: visible;
     margin-top: 0px;
@@ -1322,7 +1322,7 @@ nav a:hover {
   
 }
 
-@media(min-width:428px) and (max-width:500px){
+@media(min-width:px) and (max-width:500px){
   .banner{
     overflow:visible;
     margin-top:0px ;

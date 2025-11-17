@@ -1322,7 +1322,7 @@ nav a:hover {
   
 }
 
-@media(min-width:428px) and (max-width:500px){
+@media(min-width:px) and (max-width:500px){
   .banner{
     overflow:visible;
     margin-top:0px ;
